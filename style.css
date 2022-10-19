@@ -1,0 +1,21 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-container {
+    background-image: url(assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*
+    https://softauthor.com/css-make-background-image-full-screen/
+    instructions on how to set bg image
+    */
+}
+
+
