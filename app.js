@@ -39,9 +39,9 @@ function resetScores() {
 
 const screen  = document.querySelector('.bg-container');
 const buttons = document.querySelectorAll('button');
-const roundResult = document.createElement('div'); //creates new div node to display who won
-const scoreBoard = document.createElement('div');
-const winner = document.createElement('div');
+const roundResult = document.querySelector('.round-result'); //creates new div node to display who won
+const scoreBoard = document.querySelector('.score-board');
+const winner = document.querySelector('.winner');
 
 
 scoreBoard.style.color = 'white';
