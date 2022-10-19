@@ -11,7 +11,10 @@ html, body{
     display: flex;
     flex: none;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 100px;
+    padding-bottom: 270px;
+    font-size: 64px;
+
 }
 
 .bg-container {
@@ -28,4 +31,23 @@ html, body{
     */
 }
 
+.rock, .paper, .scissors {
+    color: rgb(203, 6, 203);
+    font-family: 'Electrolize', 'Avenir', 'Arial', sans-serif;
+    background: transparent;
+}
 
+.buttons {
+    display: flex;
+    flex: none;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+
+.round-result, .score-board, .winner {
+    display: flex;
+    flex: none;
+    justify-content: center;
+    
+    
+}

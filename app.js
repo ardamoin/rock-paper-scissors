@@ -56,7 +56,7 @@ let computerScore = 0;
 
 buttons.forEach(button => button.addEventListener('click', function() {
 
-    roundResult.textContent = playRound(this.textContent, getComputerChoice()); //updates text content of result
+    roundResult.textContent = playRound(this.className, getComputerChoice()); //updates text content of result
     scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
     winner.textContent = '';
     console.log(playerScore);
