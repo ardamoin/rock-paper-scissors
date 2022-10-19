@@ -20,38 +20,62 @@ function playRound(playerSelection, computerSelection) {
     (player === "paper" && computer === "rock") || 
     (player === "scissors" && computer === "paper")) {
 
-        return "You Win! " + player[0].toUpperCase() + player.slice(1) + " beats " + computer[0].toUpperCase() + computer.slice(1); 
+        playerScore++;
+        return "You Win the Round! " + player[0].toUpperCase() + player.slice(1) + " beats " + computer[0].toUpperCase() + computer.slice(1); 
 
     } else {
 
-        return "You Lose! " + computer[0].toUpperCase() + computer.slice(1) + " beats " + player[0].toUpperCase() + player.slice(1);
+        computerScore++;
+        return "You Lose the Round! " + computer[0].toUpperCase() + computer.slice(1) + " beats " + player[0].toUpperCase() + player.slice(1);
         
     }
 }
 
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose rock, paper or scissors: ");
-        let result = playRound(playerSelection, getComputerChoice());
-
-        if (result.includes("Win")) {
-            playerScore++;
-        } else if (result.includes("Lose")) {
-            computerScore++;
-        }
-
-        console.log(result);
-        console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore);
-    }
-
-    if (playerScore > computerScore) {
-        console.log("Congratulations! You Won the Game")
-    } else if (playerScore < computerScore) {
-        console.log("YOU LOST THE GAME :(")
-    } else {
-        console.log("Draw");
-    }
+function resetScores() {
+    playerScore = 0;
+    computerScore = 0;
 }
+
+
+const screen  = document.querySelector('.bg-container');
+const buttons = document.querySelectorAll('button');
+const roundResult = document.createElement('div'); //creates new div node to display who won
+const scoreBoard = document.createElement('div');
+const winner = document.createElement('div');
+
+
+scoreBoard.style.color = 'white';
+winner.style.color = 'white';
+roundResult.style.color = 'white';
+
+
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+buttons.forEach(button => button.addEventListener('click', function() {
+
+    roundResult.textContent = playRound(this.textContent, getComputerChoice()); //updates text content of result
+    scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
+    winner.textContent = '';
+    console.log(playerScore);
+    console.log(computerScore);
+
+    if (playerScore === 5) {
+        winner.textContent = 'PLAYER WINS THE GAME !!!';
+        winner.style.color = 'green';
+        resetScores();
+        
+    } else if (computerScore === 5) {
+        winner.textContent = 'COMPUTER WINS :(';
+        winner.style.color = 'red';
+        resetScores();
+    }
+}));
+
+
+
+screen.appendChild(roundResult);
+screen.appendChild(scoreBoard);
+screen.appendChild(winner);
