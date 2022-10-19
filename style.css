@@ -4,6 +4,16 @@ html, body{
     overflow: hidden;
 }
 
+.title {
+    font-family: 'Electrolize', 'Avenir', 'Arial', sans-serif;
+    color: rgb(203, 6, 203);
+    margin: 0;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    padding-top: 50px;
+}
+
 .bg-container {
     background-image: url(assets/background.jpg);
     background-size: cover;
