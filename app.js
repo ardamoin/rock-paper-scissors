@@ -44,9 +44,6 @@ const scoreBoard = document.querySelector('.score-board');
 const winner = document.querySelector('.winner');
 
 
-scoreBoard.style.color = 'white';
-winner.style.color = 'white';
-roundResult.style.color = 'white';
 
 
 let playerScore = 0;
@@ -64,12 +61,12 @@ buttons.forEach(button => button.addEventListener('click', function() {
 
     if (playerScore === 5) {
         winner.textContent = 'PLAYER WINS THE GAME !!!';
-        winner.style.color = 'green';
+        winner.classList.add('player-won');
         resetScores();
         
     } else if (computerScore === 5) {
         winner.textContent = 'COMPUTER WINS :(';
-        winner.style.color = 'red';
+        winner.classList.add('computer-won');
         resetScores();
     }
 }));
