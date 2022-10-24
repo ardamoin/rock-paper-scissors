@@ -42,6 +42,8 @@ const buttons = document.querySelectorAll('img');
 const roundResult = document.querySelector('.round-result'); //creates new div node to display who won
 const scoreBoard = document.querySelector('.score-board');
 const winner = document.querySelector('.winner');
+const playButton = document.querySelector('.play-button');
+const resetButton = document.querySelector('.reset-button');
 
 
 
@@ -49,6 +51,20 @@ const winner = document.querySelector('.winner');
 let playerScore = 0;
 let computerScore = 0;
 
+
+
+playButton.addEventListener('click', function() {
+    buttons.forEach(button => button.style.visibility = 'visible');
+    roundResult.style.visibility = 'visible';
+    scoreBoard.style.visibility = 'visible';
+    winner.style.visibility = 'visible';
+})
+
+resetButton.addEventListener('click', function() {
+    resetScores();
+    scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
+    roundResult.textContent = '';
+})
 
 
 buttons.forEach(button => button.addEventListener('click', function() {
