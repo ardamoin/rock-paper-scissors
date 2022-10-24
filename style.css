@@ -33,10 +33,13 @@ html, body{
 }
 
 .rock, .paper, .scissors {
+    /*
     color: rgb(203, 6, 203);
     font-family: 'Electrolize', 'Avenir', 'Arial', sans-serif;
     background: transparent;
-    font-size: 20px;
+    font-size: 20px;*/
+
+    height: 100px;
 }
 
 .buttons {
@@ -53,12 +56,4 @@ html, body{
     font-family: 'Electrolize', 'Avenir', 'Arial', sans-serif;
     font-size: 24px;
     color: rgb(35, 9, 94);
-}
-
-.player-won {
-    color: rgb(121, 200, 3);
-}
-
-.computer-won {
-    color: rgb(236, 5, 5);
 }

@@ -38,7 +38,7 @@ function resetScores() {
 
 
 const screen  = document.querySelector('.bg-container');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('img');
 const roundResult = document.querySelector('.round-result'); //creates new div node to display who won
 const scoreBoard = document.querySelector('.score-board');
 const winner = document.querySelector('.winner');
@@ -61,12 +61,12 @@ buttons.forEach(button => button.addEventListener('click', function() {
 
     if (playerScore === 5) {
         winner.textContent = 'PLAYER WINS THE GAME !!!';
-        winner.classList.add('player-won');
+        winner.style.color = 'rgb(121, 200, 3)';
         resetScores();
         
     } else if (computerScore === 5) {
         winner.textContent = 'COMPUTER WINS :(';
-        winner.classList.add('computer-won');
+        winner.style.color = 'rgb(236, 5, 5)';
         resetScores();
     }
 }));
