@@ -50,6 +50,7 @@ const resetButton = document.querySelector('.reset-button');
 
 let playerScore = 0;
 let computerScore = 0;
+let playing = true;
 
 
 
@@ -64,26 +65,29 @@ resetButton.addEventListener('click', function() {
     resetScores();
     scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
     roundResult.textContent = '';
+    winner.textContent = '';
+    playing = true;
 })
 
 
 buttons.forEach(button => button.addEventListener('click', function() {
+    if (playing) {
+        roundResult.textContent = playRound(this.className, getComputerChoice()); //updates text content of result
+        scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
+        winner.textContent = '';
 
-    roundResult.textContent = playRound(this.className, getComputerChoice()); //updates text content of result
-    scoreBoard.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
-    winner.textContent = '';
-    console.log(playerScore);
-    console.log(computerScore);
-
-    if (playerScore === 5) {
-        winner.textContent = 'PLAYER WINS THE GAME !!!';
-        winner.style.color = 'rgb(121, 200, 3)';
-        resetScores();
-        
-    } else if (computerScore === 5) {
-        winner.textContent = 'COMPUTER WINS :(';
-        winner.style.color = 'rgb(236, 5, 5)';
-        resetScores();
+        if (playerScore === 5) {
+            winner.textContent = 'PLAYER WINS THE GAME !!!';
+            winner.style.color = 'rgb(121, 200, 3)';
+            resetScores();
+            playing = false;
+            
+        } else if (computerScore === 5) {
+            winner.textContent = 'COMPUTER WINS :(';
+            winner.style.color = 'rgb(236, 5, 5)';
+            resetScores();
+            playing = false;
+        }
     }
 }));
 
