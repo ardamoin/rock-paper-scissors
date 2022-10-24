@@ -12,7 +12,7 @@ html, body{
     flex: none;
     justify-content: center;
     padding-top: 100px;
-    padding-bottom: 270px;
+    padding-bottom: 20px;
     font-size: 64px;
     min-width: 605px;
 
@@ -47,6 +47,7 @@ html, body{
     flex: none;
     justify-content: space-around;
     padding-bottom: 50px;
+    visibility: hidden;
 }
 
 .round-result, .score-board, .winner {
@@ -56,4 +57,11 @@ html, body{
     font-family: 'Electrolize', 'Avenir', 'Arial', sans-serif;
     font-size: 24px;
     color: rgb(35, 9, 94);
+    visibility: hidden;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 125px 0;
 }
