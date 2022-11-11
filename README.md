@@ -1,4 +1,7 @@
-# rock-paper-scissors
-A web application to play rock-paper-scissors. This is my first JavaScript project.
+# Rock Paper Scissors
 
-https://ardamoin.github.io/rock-paper-scissors/
+Rock paper scissors game created with HTML, CSS and JS.
+
+[Live Demo](https://ardamoin.github.io/rock-paper-scissors/) :point_left:
+
+
